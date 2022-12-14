@@ -13,7 +13,7 @@ def portscan(port):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.connect((target, port))
         return True
-    except:
+    except Exception:
         return False
 
 
@@ -30,7 +30,7 @@ def worker():
             open_ports.append(port)
 
 
-port_list = range(1, 10000)
+port_list = range(1, 60000)
 fill_queue(port_list)
 
 thread_list = []
